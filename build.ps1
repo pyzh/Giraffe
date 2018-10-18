@@ -51,7 +51,7 @@ Remove-OldBuildArtifacts
 $configuration = if ($Release.IsPresent) { "Release" } else { "Debug" }
 
 Write-Host "Building Giraffe..." -ForegroundColor Magenta
-dotnet-build   $giraffe "-c $configuration"
+dotnet-build $giraffe "-c $configuration"
 
 if (!$ExcludeTests.IsPresent -and !$Run.IsPresent)
 {
